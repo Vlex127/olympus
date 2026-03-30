@@ -25,18 +25,18 @@ export default function Home() {
             Olympus AI
           </h1>
           <p className="text-2xl md:text-3xl text-gray-300 max-w-3xl mx-auto font-light leading-relaxed">
-            Where <span className="text-yellow-400 font-semibold">artificial intelligence</span> meets <br />
-            <span className="text-yellow-400 font-semibold">educational excellence</span>
+            The <span className="text-yellow-400 font-semibold">intelligent learning ecosystem</span> that <br />
+            <span className="text-yellow-400 font-semibold">anticipates needs</span> before they arise
           </p>
           <p className="text-lg text-gray-400 max-w-2xl mx-auto mt-4">
-            The next-generation learning management platform that adapts, evolves, and empowers both educators and learners
+            Purpose-built LMS that learns from your teaching style, automates administrative burdens, and creates personalized learning journeys at scale
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
             <button className="px-10 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white rounded-full font-bold text-lg hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 shadow-lg hover:shadow-yellow-500/25 transform hover:scale-105">
-              Start Your Journey
+              Build Your Academy
             </button>
             <button className="px-10 py-4 border-2 border-yellow-500/50 text-yellow-400 rounded-full font-bold text-lg hover:bg-yellow-500/10 hover:border-yellow-400 transition-all duration-300 backdrop-blur-sm">
-              Explore Platform
+              Explore Olympian Features
             </button>
           </div>
         </motion.div>
@@ -52,31 +52,31 @@ export default function Home() {
       <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
           <h2 className="text-5xl font-bold text-center mb-6 bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
-            Discover Excellence in Learning
+            Curated Learning Pathways
           </h2>
           <p className="text-xl text-gray-600 mb-16 max-w-3xl mx-auto text-center leading-relaxed">
-            Handpicked courses designed by industry experts to accelerate your professional growth and transform your career trajectory
+            Specialized programs designed by educational technologists to solve real-world instructional challenges and accelerate institutional growth
           </p>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <CourseCard
-              title="Machine Learning Mastery"
-              description="From fundamentals to advanced algorithms - master the art of building intelligent systems that learn and adapt"
-              price="$299"
-              students={3421}
+              title="Adaptive Assessment Design"
+              description="Master the art of creating intelligent evaluations that dynamically adjust difficulty based on learner performance and knowledge gaps"
+              price="$429"
+              students={892}
               rating={4.9}
             />
             <CourseCard
-              title="Full-Stack Development Excellence"
-              description="Build production-ready applications with modern frameworks, cloud deployment, and enterprise-grade architecture"
-              price="$349"
-              students={2856}
+              title="Learning Analytics Mastery"
+              description="Transform raw educational data into actionable insights with predictive modeling, engagement forecasting, and intervention strategies"
+              price="$479"
+              students={1256}
               rating={4.8}
             />
             <CourseCard
-              title="Data Science & Analytics Pro"
-              description="Transform raw data into actionable insights with advanced statistical methods, visualization, and predictive modeling"
-              price="$399"
-              students={4192}
+              title="Automated Content Curation"
+              description="Build AI-powered systems that automatically source, evaluate, and organize learning materials based on curriculum objectives and learner profiles"
+              price="$529"
+              students={643}
               rating={4.9}
             />
           </div>
@@ -93,10 +93,10 @@ export default function Home() {
             className="text-center mb-12"
           >
             <h2 className="text-5xl font-bold text-center mb-6 bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
-              Intelligence at Your Fingertips
+              Command Your Educational Empire
             </h2>
             <p className="text-xl text-gray-600 max-w-4xl mx-auto text-center leading-relaxed">
-              Experience the power of AI-driven education with real-time analytics, personalized learning paths, and intelligent automation
+              Monitor enrollment trends, predict learner outcomes, automate grading workflows, and optimize content delivery—all from your intelligent command center
             </p>
           </motion.div>
 
@@ -199,7 +199,7 @@ export default function Home() {
 
           <div className="text-center mt-8">
             <button className="px-10 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white rounded-full font-bold text-lg hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 shadow-lg hover:shadow-yellow-500/25 transform hover:scale-105">
-              Experience Full Dashboard
+              Command Your Dashboard
             </button>
           </div>
         </div>
