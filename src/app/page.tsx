@@ -8,7 +8,7 @@ import CTASection from "@/components/CTASection";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-white overflow-x-hidden">
       {/* Hero Section with Lamp */}
       <LampContainer>
         <motion.div
@@ -19,23 +19,23 @@ export default function Home() {
             duration: 0.8,
             ease: "easeInOut",
           }}
-          className="text-center space-y-6"
+          className="text-center space-y-6 py-12 sm:py-20"
         >
-          <h1 className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 bg-clip-text text-center text-5xl md:text-8xl font-black tracking-tight text-transparent leading-tight">
+          <h1 className="bg-gradient-to-r from-yellow-400 via-yellow-500 to-yellow-600 bg-clip-text text-center text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-black tracking-tight text-transparent leading-tight px-4">
             Olympus AI
           </h1>
-          <p className="text-2xl md:text-3xl text-gray-300 max-w-3xl mx-auto font-light leading-relaxed">
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-300 max-w-3xl mx-auto font-light leading-relaxed px-4">
             The <span className="text-yellow-400 font-semibold">intelligent learning ecosystem</span> that <br />
             <span className="text-yellow-400 font-semibold">anticipates needs</span> before they arise
           </p>
-          <p className="text-lg text-gray-400 max-w-2xl mx-auto mt-4">
+          <p className="text-sm sm:text-base md:text-lg text-gray-400 max-w-2xl mx-auto mt-4 px-4">
             Purpose-built LMS that learns from your teaching style, automates administrative burdens, and creates personalized learning journeys at scale
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center mt-12">
-            <button className="px-10 py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white rounded-full font-bold text-lg hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 shadow-lg hover:shadow-yellow-500/25 transform hover:scale-105">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 justify-center mt-8 px-4">
+            <button className="px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-yellow-500 to-yellow-600 text-white rounded-full font-bold text-sm sm:text-lg hover:from-yellow-600 hover:to-yellow-700 transition-all duration-300 shadow-lg hover:shadow-yellow-500/25 transform hover:scale-105">
               Build Your Academy
             </button>
-            <button className="px-10 py-4 border-2 border-yellow-500/50 text-yellow-400 rounded-full font-bold text-lg hover:bg-yellow-500/10 hover:border-yellow-400 transition-all duration-300 backdrop-blur-sm">
+            <button className="px-6 sm:px-8 py-3 sm:py-4 border-2 border-yellow-500/50 text-yellow-400 rounded-full font-bold text-sm sm:text-lg hover:bg-yellow-500/10 hover:border-yellow-400 transition-all duration-300 backdrop-blur-sm">
               Explore Olympian Features
             </button>
           </div>
@@ -51,13 +51,13 @@ export default function Home() {
       {/* Featured Courses */}
       <section className="py-20 px-6">
         <div className="max-w-7xl mx-auto">
-          <h2 className="text-5xl font-bold text-center mb-6 bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4 sm:mb-6 bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent px-4">
             Curated Learning Pathways
           </h2>
-          <p className="text-xl text-gray-600 mb-16 max-w-3xl mx-auto text-center leading-relaxed">
+          <p className="text-lg sm:text-xl text-gray-600 mb-12 sm:mb-16 max-w-3xl mx-auto text-center leading-relaxed px-4">
             Specialized programs designed by educational technologists to solve real-world instructional challenges and accelerate institutional growth
           </p>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 sm:gap-8 px-4">
             <CourseCard
               title="Adaptive Assessment Design"
               description="Master the art of creating intelligent evaluations that dynamically adjust difficulty based on learner performance and knowledge gaps"
@@ -92,10 +92,10 @@ export default function Home() {
             transition={{ duration: 0.5 }}
             className="text-center mb-12"
           >
-            <h2 className="text-5xl font-bold text-center mb-6 bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent">
+            <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-center mb-4 sm:mb-6 bg-gradient-to-r from-gray-800 to-gray-600 bg-clip-text text-transparent px-4">
               Command Your Educational Empire
             </h2>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto text-center leading-relaxed">
+            <p className="text-lg sm:text-xl text-gray-600 max-w-4xl mx-auto text-center leading-relaxed px-4">
               Monitor enrollment trends, predict learner outcomes, automate grading workflows, and optimize content delivery—all from your intelligent command center
             </p>
           </motion.div>
