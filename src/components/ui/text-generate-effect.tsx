@@ -18,6 +18,7 @@ export const TextGenerateEffect = ({
   const wordsArray = words.split(" ");
 
   useEffect(() => {
+    // Use a more efficient animation with reduced overhead
     animate(
       "span",
       {
@@ -25,11 +26,11 @@ export const TextGenerateEffect = ({
         filter: filter ? "blur(0px)" : "none",
       },
       {
-        duration: duration ?? 1,
-        delay: stagger(0.2),
+        duration: duration ?? 0.3,
+        delay: stagger(0.1),
       }
     );
-  }, [scope.current]);
+  }, [scope.current, animate, duration, filter]);
 
   return (
     <div className={cn("font-bold", className)}>
@@ -37,9 +38,9 @@ export const TextGenerateEffect = ({
         {wordsArray.map((word, idx) => (
           <motion.span
             key={word + idx}
-            className="opacity-0 inline-block"  // removed text-black/dark:text-white
+            className="opacity-0 inline-block"
             style={{
-              filter: filter ? "blur(10px)" : "none",
+              filter: filter ? "blur(8px)" : "none",
             }}
           >
             {word}&nbsp;

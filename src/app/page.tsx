@@ -5,6 +5,7 @@ import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { WavyBackground } from "@/components/ui/wavy-background";
 import { EvervaultCard } from "@/components/ui/evervault-card";
 import { Icon } from "@/components/ui/evervault-card";
+import { FeaturesSection } from "@/components/features-section";
 
 const CourseCard = ({ icon, title, description, price }: { icon: string; title: string; description: string; price: string }) => (
   <div className="border border-[#e8e0d0] flex flex-col items-start p-4 relative h-[22rem] sm:h-[24rem] md:h-[26rem] rounded-2xl bg-[#faf8f4]">
@@ -26,15 +27,6 @@ const CourseCard = ({ icon, title, description, price }: { icon: string; title: 
     </p>
   </div>
 );
-
-const features = [
-  { icon: "👨‍🏫", title: "Live mentorship", desc: "1-on-1 guidance from top professionals in each field." },
-  { icon: "💼", title: "Hands-on projects", desc: "Build real things. Ship a portfolio worth showing." },
-  { icon: "♾️", title: "Lifetime access", desc: "Pay once. Learn forever at your own pace." },
-  { icon: "🏆", title: "Certifications", desc: "Industry-recognized credentials you can actually use." },
-  { icon: "🎯", title: "Job placement", desc: "Connect directly with employers hiring for your skills." },
-  { icon: "🆘", title: "24/7 support", desc: "Expert help whenever you're stuck — day or night." },
-];
 
 const courses = [
   { icon: "💹", title: "Forex Trading", description: "Currency markets, risk management, and live strategy from active traders.", price: "Premium" },
@@ -83,7 +75,7 @@ export default function Home() {
         <TextGenerateEffect
           words="Master skills that actually matter"
           className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-[#1a1a18] leading-tight mb-5"
-          duration={0.8}
+          duration={0.5}
         />
         <p className="text-sm sm:text-base text-[#666] leading-relaxed max-w-md mx-auto mb-8">
           Expert-led courses in trading, design, development, and more — built for people serious about their next move.
@@ -111,21 +103,7 @@ export default function Home() {
 </section>
 
       {/* Features */}
-      <section id="features" className="bg-white border-y border-[#e8e0d0] py-12 sm:py-20 px-4 sm:px-6">
-        <div className="max-w-6xl mx-auto">
-          <p className="text-xs font-semibold uppercase tracking-widest text-[#c07a1a] mb-2">Why Olympus</p>
-          <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl font-bold text-[#1a1a18] mb-6 sm:mb-10">Everything you need to succeed</h2>
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
-            {features.map((f, i) => (
-              <div key={i} className="p-5 border border-[#e8e0d0] rounded-xl bg-[#faf8f4]">
-                <div className="text-xl mb-3">{f.icon}</div>
-                <h4 className="font-semibold text-sm text-[#1a1a18] mb-1">{f.title}</h4>
-                <p className="text-xs text-[#888] leading-relaxed">{f.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FeaturesSection />
 
       {/* CTA */}
       <section id="join" className="max-w-2xl mx-auto px-4 sm:px-6 py-12 sm:py-20">

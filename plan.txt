@@ -5,3 +5,6 @@ Add Schema.org structured data (JSON-LD) for organization/courses
 Implement internal linking strategy
 Create XML sitemap at /sitemap.xml
 Add robots.txt file
+sitemap 
+layout
+robots
