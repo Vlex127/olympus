@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
+import { WavyBackground } from "@/components/ui/wavy-background";
 
 const CourseCard = ({ icon, title, description, price }: { icon: string; title: string; description: string; price: string }) => (
   <div className="group bg-white border border-[#e8e0d0] rounded-2xl p-6 hover:border-[#c07a1a] hover:-translate-y-0.5 transition-all duration-200 cursor-pointer">
@@ -49,22 +50,30 @@ export default function Home() {
           <a href="#courses" className="text-sm font-medium text-[#555] hover:text-[#c07a1a] transition-colors">Courses</a>
           <a href="#features" className="text-sm font-medium text-[#555] hover:text-[#c07a1a] transition-colors">Features</a>
           <a href="#join" className="text-sm font-medium text-[#555] hover:text-[#c07a1a] transition-colors">About</a>
-          <button className="bg-[#1a1a18] text-[#faf8f4] text-sm font-semibold px-5 py-2 rounded-full hover:bg-[#333] transition-colors">
-            Login
-          </button>
         </div>
+        <button className="bg-[#1a1a18] text-[#faf8f4] text-sm font-semibold px-5 py-2 rounded-full hover:bg-[#333] transition-colors">
+          Login
+        </button>
       </nav>
 
       {/* Hero */}
-      <section className="max-w-2xl mx-auto px-6 pt-24 pb-20 text-center">
+      <WavyBackground
+        colors={["#c07a1a", "#a8680f", "#d4915f", "#e8b87a", "#f0d4a8"]}
+        waveOpacity={0.15}
+        blur={2}
+        speed="slow"
+        backgroundFill="#faf8f4"
+        containerClassName="bg-[#faf8f4]"
+        className="max-w-2xl mx-auto px-6 text-center flex flex-col items-center justify-center"
+      >
         <div className="inline-flex items-center gap-1.5 text-xs font-semibold uppercase tracking-widest text-[#c07a1a] bg-[#fdf0da] border border-[#e8c47a] px-4 py-1.5 rounded-full mb-7">
           ★ The future of learning
         </div>
-          <TextGenerateEffect
-            words="Master skills that actually matter"
-            className="text-5xl md:text-6xl font-serif font-bold text-[#1a1a18] leading-tight mb-5"
-            duration={0.8}
-          />
+        <TextGenerateEffect
+          words="Master skills that actually matter"
+          className="text-5xl md:text-6xl font-serif font-bold text-[#1a1a18] leading-tight mb-5"
+          duration={0.8}
+        />
         <p className="text-base text-[#666] leading-relaxed max-w-md mx-auto mb-8">
           Expert-led courses in trading, design, development, and more — built for people serious about their next move.
         </p>
@@ -76,7 +85,7 @@ export default function Home() {
             Browse courses
           </button>
         </div>
-      </section>
+      </WavyBackground>
 
       {/* Courses */}
       <section id="courses" className="max-w-6xl mx-auto px-6 py-20">
