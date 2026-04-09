@@ -7,17 +7,19 @@ import { EvervaultCard } from "@/components/ui/evervault-card";
 import { FeaturesSection } from "@/components/features-section";
 
 const CourseCard = ({ icon, title, description, price }: { icon: string; title: string; description: string; price: string }) => (
-  <div className="border border-[#e8e0d0] flex flex-col items-start p-4 relative h-[22rem] sm:h-[24rem] md:h-[26rem] rounded-2xl bg-[#faf8f4]">
+  <div className="border border-[#e8e0d0] flex flex-col items-start p-3 sm:p-4 relative h-[22rem] sm:h-[24rem] md:h-[26rem] rounded-2xl bg-[#faf8f4]">
     {/* Evervault card with icon + title */}
     <EvervaultCard text={`${icon} ${title}`} className="flex-1 w-full" />
 
     {/* Below the card */}
-    <h2 className="text-[#1a1a18] mt-4 text-sm font-medium leading-relaxed">
-      {description}
-    </h2>
-    <p className="text-xs border border-[#e8e0d0] font-medium rounded-full mt-3 text-[#c07a1a] px-3 py-0.5">
-      {price}
-    </p>
+    <div className="w-full flex flex-col gap-2 mt-3 sm:mt-4">
+      <h2 className="text-[#1a1a18] text-xs sm:text-sm font-medium leading-relaxed flex-1">
+        {description}
+      </h2>
+      <p className="text-xs border border-[#e8e0d0] font-medium rounded-full text-[#c07a1a] px-3 py-0.5 w-fit">
+        {price}
+      </p>
+    </div>
   </div>
 );
 
