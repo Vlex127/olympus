@@ -3,16 +3,27 @@
 import { useState } from "react";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { WavyBackground } from "@/components/ui/wavy-background";
+import { EvervaultCard } from "@/components/ui/evervault-card";
+import { Icon } from "@/components/ui/evervault-card";
 
 const CourseCard = ({ icon, title, description, price }: { icon: string; title: string; description: string; price: string }) => (
-  <div className="group bg-white border border-[#e8e0d0] rounded-2xl p-6 hover:border-[#c07a1a] hover:-translate-y-0.5 transition-all duration-200 cursor-pointer">
-    <div className="text-3xl mb-4">{icon}</div>
-    <h3 className="font-semibold text-base text-[#1a1a18] mb-1">{title}</h3>
-    <p className="text-sm text-[#888] leading-relaxed">{description}</p>
-    <div className="flex justify-between items-center mt-5 pt-4 border-t border-[#f0ebe0]">
-      <span className="text-xs font-semibold text-[#c07a1a] bg-[#fdf0da] px-3 py-1 rounded-full">{price}</span>
-      <span className="text-sm font-semibold text-[#c07a1a]">Explore →</span>
-    </div>
+  <div className="border border-[#e8e0d0] flex flex-col items-start p-4 relative h-[26rem] rounded-2xl bg-[#faf8f4]">
+    {/* Corner icons */}
+    <Icon className="absolute h-6 w-6 -top-3 -left-3 text-[#c07a1a]" />
+    <Icon className="absolute h-6 w-6 -bottom-3 -left-3 text-[#c07a1a]" />
+    <Icon className="absolute h-6 w-6 -top-3 -right-3 text-[#c07a1a]" />
+    <Icon className="absolute h-6 w-6 -bottom-3 -right-3 text-[#c07a1a]" />
+
+    {/* Evervault card with icon + title */}
+    <EvervaultCard text={`${icon} ${title}`} className="flex-1 w-full" />
+
+    {/* Below the card */}
+    <h2 className="text-[#1a1a18] mt-4 text-sm font-medium leading-relaxed">
+      {description}
+    </h2>
+    <p className="text-xs border border-[#e8e0d0] font-medium rounded-full mt-3 text-[#c07a1a] px-3 py-0.5">
+      {price}
+    </p>
   </div>
 );
 
@@ -87,17 +98,17 @@ export default function Home() {
         </div>
       </WavyBackground>
 
-      {/* Courses */}
-      <section id="courses" className="max-w-6xl mx-auto px-6 py-20">
-        <p className="text-xs font-semibold uppercase tracking-widest text-[#c07a1a] mb-2">Curriculum</p>
-        <h2 className="font-serif text-3xl md:text-4xl font-bold text-[#1a1a18] mb-2">Six premium tracks</h2>
-        <p className="text-sm text-[#888] mb-10">Real-world projects. Expert instructors. Lifetime access.</p>
-        <div className="grid md:grid-cols-3 gap-5">
-          {courses.map((course, i) => (
-            <CourseCard key={i} {...course} />
-          ))}
-        </div>
-      </section>
+{/* Courses */}
+<section id="courses" className="max-w-6xl mx-auto px-6 py-20">
+  <p className="text-xs font-semibold uppercase tracking-widest text-[#c07a1a] mb-2">Curriculum</p>
+  <h2 className="font-serif text-3xl md:text-4xl font-bold text-[#1a1a18] mb-2">Six premium tracks</h2>
+  <p className="text-sm text-[#888] mb-14">Real-world projects. Expert instructors. Lifetime access.</p>
+  <div className="grid md:grid-cols-3 gap-10">
+    {courses.map((course, i) => (
+      <CourseCard key={i} {...course} />
+    ))}
+  </div>
+</section>
 
       {/* Features */}
       <section id="features" className="bg-white border-y border-[#e8e0d0] py-20 px-6">
