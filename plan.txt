@@ -1,0 +1,7 @@
+Additional SEO recommendations:
+
+Create public/og-image.jpg (1200x630px) and public/twitter-image.jpg for social sharing
+Add Schema.org structured data (JSON-LD) for organization/courses
+Implement internal linking strategy
+Create XML sitemap at /sitemap.xml
+Add robots.txt file

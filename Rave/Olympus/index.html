@@ -1,0 +1,992 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>OlympusTrades — Unlock Your Trading Potential</title>
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="style.css"/>
+
+</head>
+<body>
+
+<!-- Custom cursor -->
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<!-- Mobile menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#features" onclick="closeMobile()">Features</a>
+  <a href="#courses" onclick="closeMobile()">Courses</a>
+  <a href="#how" onclick="closeMobile()">How It Works</a>
+  <a href="#testimonials" onclick="closeMobile()">Testimonials</a>
+  <a href="#pricing" onclick="closeMobile()">Pricing</a>
+  <a href="#faq" onclick="closeMobile()">FAQ</a>
+</div>
+
+<!-- ── NAV ── -->
+<nav id="navbar">
+  <a href="#" class="logo">
+    <div class="logo-box">📈</div>
+    <span class="logo-text">Olympus<span>Trades</span></span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#features">Features</a></li>
+    <li><a href="#courses">Courses</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#testimonials">Testimonials</a></li>
+    <li><a href="#pricing">Pricing</a></li>
+    <li><a href="#faq">FAQ</a></li>
+  </ul>
+  <div class="nav-r">
+    <button class="btn-ghost">Sign In</button>
+    <button class="btn-cta">Get Started</button>
+    <button class="hamburger" id="hamburger" onclick="toggleMobile()">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- ── HERO ── -->
+<section id="hero">
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+  <div class="orb orb3"></div>
+
+  <div class="hero-left">
+    <div class="badge">
+      <span class="dot"></span>
+      #1 Rated Forex Education Platform
+    </div>
+
+    <h1 class="hero-h1">
+      Master the Art of<br>
+      <span class="line2">Forex Trading</span><br>
+      <span class="line3">Like a Pro</span>
+    </h1>
+
+    <p class="hero-p">
+      Join over 500+ students worldwide and learn institutional-grade
+      trading strategies from industry experts. From beginner fundamentals
+      to advanced bank-level trading techniques.
+    </p>
+
+    <div class="hero-btns">
+      <button class="btn-cta" style="padding:14px 30px;font-size:16px">Start Free Trial →</button>
+      <button class="btn-outline">
+        <span class="play-btn">▶</span> Watch Demo
+      </button>
+    </div>
+
+    <div class="hero-proof">
+      <div class="avs">
+        <div class="av" style="background:linear-gradient(135deg,#9b5de5,#7c3aed)">A</div>
+        <div class="av" style="background:linear-gradient(135deg,#06b6d4,#0891b2)">B</div>
+        <div class="av" style="background:linear-gradient(135deg,#10b981,#059669)">C</div>
+        <div class="av" style="background:linear-gradient(135deg,#f59e0b,#d97706)">D</div>
+        <div class="av" style="background:linear-gradient(135deg,#ec4899,#db2777)">+</div>
+      </div>
+      <div class="divider-v"></div>
+      <div>
+        <div class="proof-stars">★★★★★</div>
+        <div class="proof-text"><strong>4.9/5</strong> · <strong>500+</strong> Students · 1000+ Reviews</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="chart-card">
+      <div class="chart-top">
+        <div>
+          <div class="pair-name">EUR/USD</div>
+          <div class="pair-price" id="livePrice">1.09234 &nbsp;▲ +0.42%</div>
+        </div>
+        <div class="tf-pills">
+          <button class="tf active" onclick="setTF(this)">1H</button>
+          <button class="tf" onclick="setTF(this)">4H</button>
+          <button class="tf" onclick="setTF(this)">1D</button>
+          <button class="tf" onclick="setTF(this)">1W</button>
+        </div>
+      </div>
+      <div class="chart-body">
+        <svg class="chart-svg" id="heroChart" viewBox="0 0 560 220" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <linearGradient id="cg" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#9b5de5" stop-opacity=".35"/>
+              <stop offset="100%" stop-color="#9b5de5" stop-opacity="0"/>
+            </linearGradient>
+            <linearGradient id="cg2" x1="0" y1="0" x2="0" y2="1">
+              <stop offset="0%" stop-color="#00f5d4" stop-opacity=".15"/>
+              <stop offset="100%" stop-color="#00f5d4" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <!-- Grid -->
+          <line x1="0" y1="55" x2="560" y2="55" stroke="#1a1a2e" stroke-width="1"/>
+          <line x1="0" y1="110" x2="560" y2="110" stroke="#1a1a2e" stroke-width="1"/>
+          <line x1="0" y1="165" x2="560" y2="165" stroke="#1a1a2e" stroke-width="1"/>
+          <!-- Area fill -->
+          <path id="areaPath" d="M0,180 C60,165 100,140 150,120 C200,100 240,130 290,100 C340,70 390,55 440,40 C480,28 520,20 560,15 L560,220 L0,220 Z" fill="url(#cg)"/>
+          <!-- Line -->
+          <path id="linePath" d="M0,180 C60,165 100,140 150,120 C200,100 240,130 290,100 C340,70 390,55 440,40 C480,28 520,20 560,15" stroke="#9b5de5" stroke-width="2.5" fill="none" stroke-dasharray="1200" stroke-dashoffset="1200" style="animation:draw 2s ease forwards .3s"/>
+          <!-- Candlesticks -->
+          <g opacity=".75">
+            <rect x="18" y="165" width="7" height="20" fill="#00d68f" rx="1"/>
+            <rect x="44" y="152" width="7" height="22" fill="#00d68f" rx="1"/>
+            <rect x="70" y="158" width="7" height="15" fill="#ff4d6d" rx="1"/>
+            <rect x="96" y="138" width="7" height="25" fill="#00d68f" rx="1"/>
+            <rect x="122" y="115" width="7" height="28" fill="#00d68f" rx="1"/>
+            <rect x="148" y="125" width="7" height="18" fill="#ff4d6d" rx="1"/>
+            <rect x="174" y="118" width="7" height="20" fill="#00d68f" rx="1"/>
+            <rect x="200" y="95" width="7" height="28" fill="#ff4d6d" rx="1"/>
+            <rect x="226" y="88" width="7" height="22" fill="#00d68f" rx="1"/>
+            <rect x="252" y="78" width="7" height="25" fill="#00d68f" rx="1"/>
+            <rect x="278" y="65" width="7" height="20" fill="#ff4d6d" rx="1"/>
+            <rect x="304" y="52" width="7" height="24" fill="#00d68f" rx="1"/>
+            <rect x="330" y="44" width="7" height="18" fill="#00d68f" rx="1"/>
+            <rect x="356" y="38" width="7" height="20" fill="#ff4d6d" rx="1"/>
+            <rect x="382" y="30" width="7" height="22" fill="#00d68f" rx="1"/>
+            <rect x="408" y="22" width="7" height="18" fill="#00d68f" rx="1"/>
+            <rect x="434" y="18" width="7" height="20" fill="#ff4d6d" rx="1"/>
+            <rect x="460" y="12" width="7" height="16" fill="#00d68f" rx="1"/>
+            <rect x="486" y="8" width="7" height="18" fill="#00d68f" rx="1"/>
+            <rect x="512" y="6" width="7" height="14" fill="#ff4d6d" rx="1"/>
+            <rect x="538" y="4" width="7" height="16" fill="#00d68f" rx="1"/>
+          </g>
+          <!-- Profit label -->
+          <rect x="440" y="192" width="110" height="22" rx="11" fill="rgba(0,214,143,.12)" stroke="rgba(0,214,143,.3)" stroke-width="1"/>
+          <text x="495" y="207" fill="#00d68f" font-size="11" font-family="monospace" text-anchor="middle" font-weight="600">▲ +245% Profit</text>
+        </svg>
+      </div>
+      <div class="float-cards">
+        <div class="fc">
+          <div class="fc-label">Win Rate</div>
+          <div class="fc-val" style="color:var(--green)">94%</div>
+        </div>
+        <div class="fc">
+          <div class="fc-label">Avg RR</div>
+          <div class="fc-val" style="color:var(--purple-s)">1:3.2</div>
+        </div>
+        <div class="fc">
+          <div class="fc-label">Trades</div>
+          <div class="fc-val" style="color:var(--cyan)">1,847</div>
+        </div>
+      </div>
+      <div class="chart-stats">
+        <div class="cs"><div class="cs-val c-p">$100K+</div><div class="cs-lbl">Student Profits</div></div>
+        <div class="cs"><div class="cs-val c-c">80%</div><div class="cs-lbl">Success Rate</div></div>
+        <div class="cs"><div class="cs-val c-g">20+</div><div class="cs-lbl">Video Lessons</div></div>
+        <div class="cs"><div class="cs-val" style="color:var(--pink)">24/7</div><div class="cs-lbl">Support</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+@keyframes draw{to{stroke-dashoffset:0}}
+.c-p{color:var(--purple-s)}.c-c{color:var(--cyan)}.c-g{color:var(--green)}
+</style>
+
+<!-- ── STATS STRIP ── -->
+<section id="stats-strip">
+  <div class="stats-grid6">
+    <div class="sg-card reveal">
+      <div class="sg-icon" style="background:linear-gradient(135deg,#9b5de5,#7c3aed)">👥</div>
+      <div class="sg-val" style="color:var(--purple-s)" data-count="500" data-suffix="+">0</div>
+      <div class="sg-name">Students</div>
+      <div class="sg-sub">Worldwide community</div>
+    </div>
+    <div class="sg-card reveal">
+      <div class="sg-icon" style="background:linear-gradient(135deg,#06b6d4,#0891b2)">📖</div>
+      <div class="sg-val" style="color:var(--cyan)" data-count="20" data-suffix="+">0</div>
+      <div class="sg-name">Video Lessons</div>
+      <div class="sg-sub">Hours of content</div>
+    </div>
+    <div class="sg-card reveal">
+      <div class="sg-icon" style="background:linear-gradient(135deg,#10b981,#059669)">📈</div>
+      <div class="sg-val" style="color:var(--green)">$100k+</div>
+      <div class="sg-name">Student Profits</div>
+      <div class="sg-sub">Combined earnings</div>
+    </div>
+    <div class="sg-card reveal">
+      <div class="sg-icon" style="background:linear-gradient(135deg,#6366f1,#4f46e5)">🌐</div>
+      <div class="sg-val" style="color:#818cf8" data-count="25" data-suffix="+">0</div>
+      <div class="sg-name">Countries</div>
+      <div class="sg-sub">Global reach</div>
+    </div>
+    <div class="sg-card reveal">
+      <div class="sg-icon" style="background:linear-gradient(135deg,#ec4899,#db2777)">🏆</div>
+      <div class="sg-val" style="color:var(--pink)" data-count="7" data-suffix="+">0</div>
+      <div class="sg-name">Expert Mentors</div>
+      <div class="sg-sub">Industry veterans</div>
+    </div>
+    <div class="sg-card reveal">
+      <div class="sg-icon" style="background:linear-gradient(135deg,#f97316,#ea580c)">⏰</div>
+      <div class="sg-val" style="color:var(--gold)">24/7</div>
+      <div class="sg-name">Support</div>
+      <div class="sg-sub">Always available</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FEATURES ── -->
+<section id="features">
+  <div class="features-intro reveal">
+    <div>
+      <div class="section-tag">✦ Platform Features</div>
+      <h2 class="section-h">Everything You Need to<br><span class="hl">Trade Profitably</span></h2>
+    </div>
+    <p class="section-p">Our platform combines cutting-edge education with real-world trading tools so you learn faster and trade smarter from day one.</p>
+  </div>
+  <div class="features-grid">
+    <div class="feat-card reveal">
+      <div class="feat-icon" style="background:linear-gradient(135deg,#9b5de5,#7c3aed)">🎓</div>
+      <div class="feat-h">Structured Learning Paths</div>
+      <p class="feat-p">Follow a carefully designed curriculum from beginner to expert. Every lesson builds on the last with quizzes and practical exercises.</p>
+      <a href="#courses" class="feat-link">Explore Courses →</a>
+    </div>
+    <div class="feat-card reveal">
+      <div class="feat-icon" style="background:linear-gradient(135deg,#00f5d4,#06b6d4)">📊</div>
+      <div class="feat-h">Live Trading Signals</div>
+      <p class="feat-p">Receive real-time signals with full analysis from our expert traders. See the reasoning, enter the trade, and learn as you go.</p>
+      <a href="#live" class="feat-link">See Live Data →</a>
+    </div>
+   
+    <div class="feat-card reveal">
+      <div class="feat-icon" style="background:linear-gradient(135deg,#f72585,#db2777)">👥</div>
+      <div class="feat-h">Private Trading Community</div>
+      <p class="feat-p">Join a private Discord with 50,000+ active traders sharing setups, discussing markets, and holding each other accountable.</p>
+      <a href="#" class="feat-link">Join Community →</a>
+    </div>
+    <div class="feat-card reveal">
+      <div class="feat-icon" style="background:linear-gradient(135deg,#f5a623,#d97706)">📅</div>
+      <div class="feat-h">Weekly Live Webinars</div>
+      <p class="feat-p">Attend live Q&A sessions and market breakdowns every week. Ask questions, share charts, and get direct mentor feedback.</p>
+      <a href="#" class="feat-link">View Schedule →</a>
+    </div>
+    <div class="feat-card reveal">
+      <div class="feat-icon" style="background:linear-gradient(135deg,#6366f1,#4f46e5)">📱</div>
+      <div class="feat-h">Mobile-First Platform</div>
+      <p class="feat-p">Learn on any device. Full course access, signal alerts, and community features are optimized for mobile trading on the go.</p>
+      <a href="#" class="feat-link">Download App →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ── COURSES ── -->
+<section id="courses">
+  <div class="center-text reveal">
+    <div class="section-tag">✦ Comprehensive Curriculum</div>
+    <h2 class="section-h">Master Every Aspect of <span class="hl">Forex Trading</span></h2>
+    <p class="section-p">Our structured path takes you from complete beginner to advanced trader with proven strategies used by industry professionals.</p>
+  </div>
+
+  <div class="courses-grid">
+    <!-- Course 1 -->
+    <div class="course-card open reveal" onclick="toggleCourse(this)">
+      <div class="course-hd">
+        <div class="c-icon" style="background:linear-gradient(135deg,#10b981,#059669)">📚</div>
+        <div class="c-info">
+          <div class="c-badge b-beg">Beginner</div>
+          <div class="c-title">Forex Fundamentals</div>
+          <div class="c-desc">Build your foundation with market basics, currency pairs, and essential trading concepts.</div>
+        </div>
+        <div class="c-chevron">▼</div>
+      </div>
+      <div class="course-meta"><span>⏱ 4 weeks</span><span>▶ 24 lessons</span><span>⭐ 4.9</span></div>
+      <div class="course-body">
+        <div class="learn-label">What you will learn:</div>
+        <div class="learn-grid">
+          <div class="li-item">Introduction to Forex Markets</div>
+          <div class="li-item">Currency Pairs & Exchange Rates</div>
+          <div class="li-item">Market Sessions & Timing</div>
+          <div class="li-item">Order Types & Execution</div>
+          <div class="li-item">Basic Chart Reading</div>
+          <div class="li-item">Trading Platform Setup</div>
+        </div>
+        <button class="btn-course">Start This Course →</button>
+      </div>
+    </div>
+    <!-- Course 2 -->
+    <div class="course-card reveal" onclick="toggleCourse(this)">
+      <div class="course-hd">
+        <div class="c-icon" style="background:linear-gradient(135deg,#06b6d4,#0891b2)">📊</div>
+        <div class="c-info">
+          <div class="c-badge b-int">Intermediate</div>
+          <div class="c-title">Technical Analysis Mastery</div>
+          <div class="c-desc">Master chart patterns, indicators, and institutional-grade technical strategies.</div>
+        </div>
+        <div class="c-chevron">▼</div>
+      </div>
+      <div class="course-meta"><span>⏱ 6 weeks</span><span>▶ 36 lessons</span><span>⭐ 4.9</span></div>
+      <div class="course-body">
+        <div class="learn-label">What you will learn:</div>
+        <div class="learn-grid">
+          <div class="li-item">Support & Resistance Levels</div>
+          <div class="li-item">Chart Pattern Recognition</div>
+          <div class="li-item">Fibonacci Retracements</div>
+          <div class="li-item">RSI, MACD & Indicators</div>
+          <div class="li-item">Multi-Timeframe Analysis</div>
+          <div class="li-item">Institutional Order Flow</div>
+        </div>
+        <button class="btn-course">Start This Course →</button>
+      </div>
+    </div>
+    <!-- Course 3 -->
+    <div class="course-card reveal" onclick="toggleCourse(this)">
+      <div class="course-hd">
+        <div class="c-icon" style="background:linear-gradient(135deg,#a855f7,#7c3aed)">📉</div>
+        <div class="c-info">
+          <div class="c-badge b-int">Intermediate</div>
+          <div class="c-title">Fundamental Analysis</div>
+          <div class="c-desc">Understand macro drivers, economic indicators, and news-driven market movements.</div>
+        </div>
+        <div class="c-chevron">▼</div>
+      </div>
+      <div class="course-meta"><span>⏱ 4 weeks</span><span>▶ 28 lessons</span><span>⭐ 4.8</span></div>
+      <div class="course-body">
+        <div class="learn-label">What you will learn:</div>
+        <div class="learn-grid">
+          <div class="li-item">GDP & Economic Reports</div>
+          <div class="li-item">Central Bank Policies</div>
+          <div class="li-item">Interest Rate Impact</div>
+          <div class="li-item">NFP & CPI Trading</div>
+          <div class="li-item">Currency Correlations</div>
+          <div class="li-item">News Calendar Strategy</div>
+        </div>
+        <button class="btn-course">Start This Course →</button>
+      </div>
+    </div>
+    <!-- Course 4 -->
+    <div class="course-card reveal" onclick="toggleCourse(this)">
+      <div class="course-hd">
+        <div class="c-icon" style="background:linear-gradient(135deg,#ec4899,#db2777)">🛡</div>
+        <div class="c-info">
+          <div class="c-badge b-adv">Advanced</div>
+          <div class="c-title">Risk Management Pro</div>
+          <div class="c-desc">Learn professional position sizing, drawdown protection, and capital preservation.</div>
+        </div>
+        <div class="c-chevron">▼</div>
+      </div>
+      <div class="course-meta"><span>⏱ 3 weeks</span><span>▶ 18 lessons</span><span>⭐ 5.0</span></div>
+      <div class="course-body">
+        <div class="learn-label">What you will learn:</div>
+        <div class="learn-grid">
+          <div class="li-item">Position Sizing Models</div>
+          <div class="li-item">Risk:Reward Ratios</div>
+          <div class="li-item">Drawdown Management</div>
+          <div class="li-item">Portfolio Diversification</div>
+          <div class="li-item">Stop Loss Placement</div>
+          <div class="li-item">Capital Preservation Rules</div>
+        </div>
+        <button class="btn-course">Start This Course →</button>
+      </div>
+    </div>
+    <!-- Course 5 -->
+    <div class="course-card reveal" onclick="toggleCourse(this)">
+      <div class="course-hd">
+        <div class="c-icon" style="background:linear-gradient(135deg,#f97316,#ea580c)">🧠</div>
+        <div class="c-info">
+          <div class="c-badge b-adv">Advanced</div>
+          <div class="c-title">Trading Psychology</div>
+          <div class="c-desc">Master your mindset, overcome emotional trading, and build unbreakable discipline.</div>
+        </div>
+        <div class="c-chevron">▼</div>
+      </div>
+      <div class="course-meta"><span>⏱ 2 weeks</span><span>▶ 14 lessons</span><span>⭐ 4.9</span></div>
+      <div class="course-body">
+        <div class="learn-label">What you will learn:</div>
+        <div class="learn-grid">
+          <div class="li-item">Overcoming FOMO & Greed</div>
+          <div class="li-item">Building Trading Rules</div>
+          <div class="li-item">Journal Methodology</div>
+          <div class="li-item">Discipline Frameworks</div>
+          <div class="li-item">Loss Recovery Mindset</div>
+          <div class="li-item">Peak Performance Habits</div>
+        </div>
+        <button class="btn-course">Start This Course →</button>
+      </div>
+    </div>
+    <!-- Course 6 -->
+    <div class="course-card reveal" onclick="toggleCourse(this)">
+      <div class="course-hd">
+        <div class="c-icon" style="background:linear-gradient(135deg,#fbbf24,#d97706)">⚡</div>
+        <div class="c-info">
+          <div class="c-badge b-exp">Expert</div>
+          <div class="c-title">Institutional Strategies</div>
+          <div class="c-desc">Learn bank-level trading strategies used by professional trading desks worldwide.</div>
+        </div>
+        <div class="c-chevron">▼</div>
+      </div>
+      <div class="course-meta"><span>⏱ 8 weeks</span><span>▶ 48 lessons</span><span>⭐ 5.0</span></div>
+      <div class="course-body">
+        <div class="learn-label">What you will learn:</div>
+        <div class="learn-grid">
+          <div class="li-item">Smart Money Concepts</div>
+          <div class="li-item">Liquidity Hunting</div>
+          <div class="li-item">ICT Methodology</div>
+          <div class="li-item">Order Block Trading</div>
+          <div class="li-item">Market Maker Models</div>
+          <div class="li-item">Interbank Flow Analysis</div>
+        </div>
+        <button class="btn-course">Start This Course →</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="path-banner reveal">
+    <div class="path-ico">🖥</div>
+    <div class="path-info">
+      <h3>Complete Learning Path</h3>
+      <p>All 6 courses included in Premium & Elite plans</p>
+    </div>
+    <div class="path-nums">
+      <div class="pn"><div class="pn-val" style="color:var(--purple-s)">27</div><div class="pn-lbl">Weeks Total</div></div>
+      <div class="pn"><div class="pn-val" style="color:var(--cyan)">168</div><div class="pn-lbl">Video Lessons</div></div>
+      <div class="pn"><div class="pn-val" style="color:var(--green)">50+</div><div class="pn-lbl">Hours Content</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ── HOW IT WORKS ── -->
+<section id="how">
+  <div class="center-text reveal">
+    <div class="section-tag">✦ Simple Process</div>
+    <h2 class="section-h">From Zero to <span class="hl">Profitable Trader</span></h2>
+    <p class="section-p">Our four-step framework is designed to get you trading confidently in the shortest time possible.</p>
+  </div>
+  <div class="steps-grid">
+    <div class="step-card reveal">
+      <div class="step-num">1</div>
+      <div class="step-icon">🎯</div>
+      <div class="step-h">Choose Your Path</div>
+      <p class="step-p">Take our free assessment to find your current skill level and get a personalized learning roadmap built just for you.</p>
+    </div>
+    <div class="step-card reveal">
+      <div class="step-num">2</div>
+      <div class="step-icon">📚</div>
+      <div class="step-h">Learn the Fundamentals</div>
+      <p class="step-p">Work through structured video lessons, quizzes, and exercises at your own pace with lifetime access on any device.</p>
+    </div>
+    <div class="step-card reveal">
+      <div class="step-num">3</div>
+      <div class="step-icon">🔬</div>
+      <div class="step-h">Practice on Demo</div>
+      <p class="step-p">Apply what you've learned on a demo account with real market conditions. Get feedback from mentors on your trades.</p>
+    </div>
+    <div class="step-card reveal">
+      <div class="step-num">4</div>
+      <div class="step-icon">💰</div>
+      <div class="step-h">Trade Live & Profit</div>
+      <p class="step-p">Graduate to live trading with our risk management framework. Join the community of profitable traders.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── LIVE TRADING SECTION ── -->
+<section id="live">
+  <div class="live-grid">
+    <div>
+      <div class="section-tag reveal">✦ Real-Time Data</div>
+      <h2 class="section-h reveal">Live Market <span class="hl">Intelligence</span></h2>
+      <p class="section-p reveal">Get access to real-time market data, live signals from expert traders, and AI-powered analysis — all in one place.</p>
+      <div class="live-features">
+        <div class="live-feat reveal">
+          <div class="lf-icon" style="background:rgba(0,245,212,.12)">📡</div>
+          <div>
+            <div class="lf-h">Live Trading Signals</div>
+            <p class="lf-p">Receive 3–8 high-probability trade signals daily with entry, stop loss, and take profit levels clearly defined.</p>
+          </div>
+        </div>
+          
+        <div class="live-feat reveal">
+          <div class="lf-icon" style="background:rgba(245,166,35,.12)">📰</div>
+          <div>
+            <div class="lf-h">Economic Calendar</div>
+            <p class="lf-p">Stay ahead of market-moving events with our integrated economic calendar with impact ratings and trade plans.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="market-widget">
+        <div class="mw-header">
+          <div class="mw-title">Live Market Rates</div>
+          <div class="live-dot">LIVE</div>
+        </div>
+        <div id="marketRows"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── TESTIMONIALS ── -->
+<section id="testimonials">
+  <div class="center-text reveal">
+    <div class="section-tag">✦ Student Success Stories</div>
+    <h2 class="section-h">Real Results from <span class="hl">Real Traders</span></h2>
+    <p class="section-p">Over 500 students have transformed their trading using our platform. Here's what some of them say.</p>
+  </div>
+  <div class="testi-grid">
+    <div class="testi-card reveal">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"I went from blowing 3 accounts to being consistently profitable in just 6 months. The risk management course completely changed my approach."</p>
+      <div class="testi-author">
+        <div class="testi-av" style="background:linear-gradient(135deg,#9b5de5,#7c3aed)">MO</div>
+        <div>
+          <div class="testi-name">Michael Okafor</div>
+          <div class="testi-role">Full-time Trader, Lagos</div>
+          <div class="testi-profit">+$18,400 profit this year</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal">
+      <div class="testi-stars">★★★★</div>
+      <p class="testi-text">"The institutional strategies module is worth 10x the price alone. I finally understand how banks move the market and I trade WITH them now."</p>
+      <div class="testi-author">
+        <div class="testi-av" style="background:linear-gradient(135deg,#06b6d4,#0891b2)">SA</div>
+        <div>
+          <div class="testi-name">Sarah Adeyemi</div>
+          <div class="testi-role">Part-time Trader, Abuja</div>
+          <div class="testi-profit">+$9,200 in 4 months</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"The live webinars are incredible. Getting direct feedback on my trades from a professional mentor accelerated my growth 10x."</p>
+      <div class="testi-author">
+        <div class="testi-av" style="background:linear-gradient(135deg,#10b981,#059669)">JK</div>
+        <div>
+          <div class="testi-name">James Kofi</div>
+          <div class="testi-role">Swing Trader, Accra</div>
+          <div class="testi-profit">+$24,000 in 8 months</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal">
+      <div class="testi-stars">★★★★</div>
+      <p class="testi-text">"I tried 5 different courses before ForexMastery. This is the only one that teaches you the WHY behind price movement, not just patterns."</p>
+      <div class="testi-author">
+        <div class="testi-av" style="background:linear-gradient(135deg,#f59e0b,#d97706)">AT</div>
+        <div>
+          <div class="testi-name">Amara Touré</div>
+          <div class="testi-role">Day Trader, Dakar</div>
+          <div class="testi-profit">+$31,500 this year</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal">
+      <div class="testi-stars">★★★★★</div>
+      <p class="testi-text">"The community alone is worth every penny. 50,000 traders sharing setups 24/7 means you're never trading alone. Game changer."</p>
+      <div class="testi-author">
+        <div class="testi-av" style="background:linear-gradient(135deg,#ec4899,#db2777)">FN</div>
+        <div>
+          <div class="testi-name">Faith Nwosu</div>
+          <div class="testi-role">Trader, Port Harcourt</div>
+          <div class="testi-profit">+$6,800 in 3 months</div>
+        </div>
+      </div>
+    </div>
+    <div class="testi-card reveal">
+      <div class="testi-stars">★★★★</div>
+      <p class="testi-text">"Started with $500, now managing a $50,000 account. The psychology course helped me eliminate emotional trading completely."</p>
+      <div class="testi-author">
+        <div class="testi-av" style="background:linear-gradient(135deg,#6366f1,#4f46e5)">DM</div>
+        <div>
+          <div class="testi-name">David Mensah</div>
+          <div class="testi-role">Funded Trader, Kumasi</div>
+          <div class="testi-profit">+$47,200 total profit</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ── PRICING ── -->
+<section id="pricing">
+  <div class="center-text reveal">
+    <div class="section-tag">✦ Flexible Plans</div>
+    <h2 class="section-h">Choose Your <span class="hl">Trading Journey</span></h2>
+    <p class="section-p">Invest in your education today. All plans include a 7-day free trial. Cancel anytime.</p>
+  </div>
+
+  <div class="pricing-toggle">
+    <span class="toggle-label active" id="monthlyLabel">Monthly</span>
+    <div class="toggle-switch" id="billingToggle" onclick="toggleBilling()"></div>
+    <span class="toggle-label" id="annualLabel">Annual</span>
+    <span class="save-badge">Save 31%</span>
+  </div>
+
+  <div class="pricing-grid">
+    <!-- Starter -->
+    <div class="price-card reveal">
+      <div class="price-tier">Starter</div>
+      <div class="price-val"><sup>$</sup><span class="price-num" data-monthly="29" data-annual="20">29</span><span class="period">/mo</span></div>
+      <p class="price-desc">Perfect for beginners who want to learn the fundamentals and start their trading journey.</p>
+      <div class="price-divider"></div>
+      <ul class="price-features">
+        <li><span class="check check-yes">✓</span> Forex Fundamentals Course</li>
+        <li><span class="check check-yes">✓</span> Basic Chart Reading</li>
+        <li><span class="check check-yes">✓</span> Community Access</li>
+        <li><span class="check check-yes">✓</span> Mobile App Access</li>
+        <li><span class="check check-yes">✓</span> Email Support</li>
+        <li class="dim"><span class="check check-no">✗</span> Live Trading Signals</li>
+        <li class="dim"><span class="check check-no">✗</span> AI Chart Analysis</li>
+        <li class="dim"><span class="check check-no">✗</span> Weekly Webinars</li>
+        <li class="dim"><span class="check check-no">✗</span> Mentor 1-on-1 Sessions</li>
+      </ul>
+      <button class="btn-price btn-price-outline">Start Free Trial</button>
+      <p class="price-note">7-day free trial · No card required</p>
+    </div>
+
+    <!-- Premium (popular) -->
+    <div class="price-card popular reveal">
+      <div class="price-glow"></div>
+      <div class="popular-badge">Most Popular</div>
+      <div class="price-tier" style="color:var(--purple-s)">Premium</div>
+      <div class="price-val" style="color:var(--purple-s)"><sup>$</sup><span class="price-num" data-monthly="79" data-annual="54">79</span><span class="period">/mo</span></div>
+      <p class="price-desc">Everything you need to become a consistently profitable trader with live signals and mentoring.</p>
+      <div class="price-divider"></div>
+      <ul class="price-features">
+        <li><span class="check check-yes">✓</span> All 6 Courses Included</li>
+        <li><span class="check check-yes">✓</span> Live Trading Signals (Daily)</li>
+        <li><span class="check check-yes">✓</span> AI Chart Analysis Tool</li>
+        <li><span class="check check-yes">✓</span> Weekly Live Webinars</li>
+        <li><span class="check check-yes">✓</span> Private Community Access</li>
+        <li><span class="check check-yes">✓</span> Economic Calendar Pro</li>
+        <li><span class="check check-yes">✓</span> Trade Journal Software</li>
+        <li><span class="check check-yes">✓</span> Priority Support 24/7</li>
+        <li class="dim"><span class="check check-no">✗</span> 1-on-1 Mentor Sessions</li>
+      </ul>
+      <button class="btn-price btn-price-primary">Start Free Trial</button>
+      <p class="price-note" style="color:var(--purple-s)">7-day free trial · Most popular plan</p>
+    </div>
+
+    <!-- Elite -->
+    <div class="price-card reveal">
+      <div class="price-tier" style="color:var(--gold)">Elite</div>
+      <div class="price-val" style="color:var(--gold)"><sup>$</sup><span class="price-num" data-monthly="149" data-annual="103">149</span><span class="period">/mo</span></div>
+      <p class="price-desc">The full experience for serious traders ready to go professional with dedicated mentorship.</p>
+      <div class="price-divider"></div>
+      <ul class="price-features">
+        <li><span class="check check-yes">✓</span> Everything in Premium</li>
+        <li><span class="check check-yes">✓</span> 4x Monthly 1-on-1 Mentoring</li>
+        <li><span class="check check-yes">✓</span> Personalized Trading Plan</li>
+        <li><span class="check check-yes">✓</span> Prop Firm Preparation</li>
+        <li><span class="check check-yes">✓</span> Portfolio Review Sessions</li>
+        <li><span class="check check-yes">✓</span> Advanced Algo Strategies</li>
+        <li><span class="check check-yes">✓</span> Funded Account Guidance</li>
+        <li><span class="check check-yes">✓</span> VIP Discord Channel</li>
+        <li><span class="check check-yes">✓</span> Lifetime Course Updates</li>
+      </ul>
+      <button class="btn-price btn-price-outline" style="border-color:rgba(245,166,35,.4);color:var(--gold)">Start Free Trial</button>
+      <p class="price-note">7-day free trial · Best value for pros</p>
+    </div>
+  </div>
+</section>
+
+<!-- ── FAQ ── -->
+<section id="faq">
+  <div class="center-text reveal">
+    <div class="section-tag">✦ Got Questions?</div>
+    <h2 class="section-h">Frequently Asked <span class="hl">Questions</span></h2>
+    <p class="section-p">Everything you need to know about ForexMastery. Can't find your answer? Chat with our team.</p>
+  </div>
+  <div class="faq-wrap">
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <div class="faq-q"><span class="faq-q-text">Do I need any prior trading experience?</span><div class="faq-icon">+</div></div>
+      <div class="faq-a">Absolutely not. Our Forex Fundamentals course starts from zero — assuming no prior knowledge. We guide you step-by-step through every concept before advancing. Thousands of our students had never seen a trading chart before joining.</div>
+    </div>
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <div class="faq-q"><span class="faq-q-text">How much capital do I need to start trading?</span><div class="faq-icon">+</div></div>
+      <div class="faq-a">We recommend starting with a demo account (no real money) for at least 2–3 months before going live. When you're ready, you can start with as little as $100–$500. Our risk management courses will teach you how to grow any account size responsibly.</div>
+    </div>
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <div class="faq-q"><span class="faq-q-text">Are the live signals guaranteed to be profitable?</span><div class="faq-icon">+</div></div>
+      <div class="faq-a">No signal service can guarantee profits — trading involves risk. Our signals are generated by experienced traders with a documented 94% win rate, but past performance doesn't guarantee future results. We always include stop losses and teach you proper risk management.</div>
+    </div>
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <div class="faq-q"><span class="faq-q-text">Can I cancel my subscription at any time?</span><div class="faq-icon">+</div></div>
+      <div class="faq-a">Yes, absolutely. You can cancel your subscription at any time with zero penalties. Your access continues until the end of your current billing period. We also offer a 7-day free trial on all plans so you can experience the platform before committing.</div>
+    </div>
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <div class="faq-q"><span class="faq-q-text">How long do I have access to the course content?</span><div class="faq-icon">+</div></div>
+      <div class="faq-a">As long as your subscription is active, you have full unlimited access to all course content including any new lessons we add. Elite plan members receive lifetime access to all content even after cancellation.</div>
+    </div>
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <div class="faq-q"><span class="faq-q-text">What markets are covered — only Forex?</span><div class="faq-icon">+</div></div>
+      <div class="faq-a">While our primary focus is the Forex market, the strategies and concepts we teach apply to Indices, Gold, Oil, and Commodities as well. Many of our students successfully trade multiple markets using the skills they learn here.</div>
+    </div>
+    <div class="faq-item reveal" onclick="toggleFaq(this)">
+      <div class="faq-q"><span class="faq-q-text">Is there a refund policy?</span><div class="faq-icon">+</div></div>
+      <div class="faq-a">Yes. If you're not satisfied within the first 30 days of a paid subscription, we offer a full money-back guarantee — no questions asked. We're confident in our product and want you to be 100% happy.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA BANNER ── -->
+<section id="cta">
+  <div class="cta-box reveal">
+    <h2 class="cta-h">Ready to <span class="hl">Unlock Your</span><br>Trading Potential?</h2>
+    <p class="cta-p">Join 50,000+ traders who are already learning, growing, and profiting with ForexMastery. Start your free trial today — no credit card required.</p>
+    <div class="cta-btns">
+      <button class="btn-cta" style="padding:16px 36px;font-size:17px">Start Free Trial — 7 Days Free</button>
+      <button class="btn-outline" style="padding:16px 28px;font-size:17px">View Pricing Plans</button>
+    </div>
+    <div class="cta-badge-row">
+      <span class="cta-badge"><span class="ck">✓</span> No credit card required</span>
+      <span class="cta-badge"><span class="ck">✓</span> Cancel anytime</span>
+      <span class="cta-badge"><span class="ck">✓</span> 30-day money-back guarantee</span>
+      <span class="cta-badge"><span class="ck">✓</span> Instant access</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="#" class="logo" style="display:inline-flex;margin-bottom:0">
+        <div class="logo-box">📈</div>
+        <span class="logo-text" style="font-size:20px">Forex<span>Mastery</span></span>
+      </a>
+      <p>The world's leading Forex education platform. Empowering 50,000+ traders in 85+ countries to trade profitably with institutional-grade strategies.</p>
+      <div class="footer-socials">
+        <a class="social-btn" href="#">𝕏</a>
+        <a class="social-btn" href="#">in</a>
+        <a class="social-btn" href="#">yt</a>
+        <a class="social-btn" href="#">tg</a>
+        <a class="social-btn" href="#">ig</a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Platform</h4>
+      <ul>
+        <li><a href="#courses">Courses</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#">Live Signals</a></li>
+        <li><a href="#">AI Analyzer</a></li>
+        <li><a href="#">Mobile App</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Learn</h4>
+      <ul>
+        <li><a href="#">Forex Basics</a></li>
+        <li><a href="#">Technical Analysis</a></li>
+        <li><a href="#">Risk Management</a></li>
+        <li><a href="#">Trading Psychology</a></li>
+        <li><a href="#">Free Resources</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Company</h4>
+      <ul>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Our Mentors</a></li>
+        <li><a href="#testimonials">Success Stories</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#">Contact</a></li>
+        <li><a href="#">Affiliates</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 ForexMastery. All rights reserved.</span>
+    <span>Trading involves risk. Past results do not guarantee future performance.</span>
+    <span>
+      <a href="#">Privacy Policy</a> &nbsp;·&nbsp;
+      <a href="#">Terms of Service</a> &nbsp;·&nbsp;
+      <a href="#">Risk Disclaimer</a>
+    </span>
+  </div>
+</footer>
+
+<!-- ══════════════════════════════════
+     JAVASCRIPT
+══════════════════════════════════ -->
+<script>
+/* ── Custom Cursor ── */
+const cursor = document.getElementById('cursor');
+const ring = document.getElementById('cursor-ring');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{
+  mx=e.clientX; my=e.clientY;
+  cursor.style.left=mx+'px'; cursor.style.top=my+'px';
+});
+function animRing(){
+  rx+=(mx-rx)*.12; ry+=(my-ry)*.12;
+  ring.style.left=rx+'px'; ring.style.top=ry+'px';
+  requestAnimationFrame(animRing);
+}
+animRing();
+document.querySelectorAll('button,a,.course-card,.faq-item').forEach(el=>{
+  el.addEventListener('mouseenter',()=>{
+    cursor.style.width='20px'; cursor.style.height='20px';
+    cursor.style.background='var(--purple-s)';
+    ring.style.width='50px'; ring.style.height='50px';
+    ring.style.opacity='.5';
+  });
+  el.addEventListener('mouseleave',()=>{
+    cursor.style.width='12px'; cursor.style.height='12px';
+    cursor.style.background='var(--purple)';
+    ring.style.width='36px'; ring.style.height='36px';
+    ring.style.opacity='1';
+  });
+});
+
+/* ── Nav Scroll ── */
+window.addEventListener('scroll',()=>{
+  document.getElementById('navbar').style.background=
+    window.scrollY>60?'rgba(7,7,15,.97)':'rgba(7,7,15,.8)';
+});
+
+/* ── Mobile Menu ── */
+function toggleMobile(){
+  document.getElementById('mobileMenu').classList.toggle('open');
+}
+function closeMobile(){
+  document.getElementById('mobileMenu').classList.remove('open');
+}
+
+/* ── Course Toggle ── */
+function toggleCourse(card){
+  const wasOpen = card.classList.contains('open');
+  document.querySelectorAll('.course-card').forEach(c=>c.classList.remove('open'));
+  if(!wasOpen) card.classList.add('open');
+}
+
+/* ── FAQ Toggle ── */
+function toggleFaq(item){
+  item.classList.toggle('open');
+}
+
+/* ── Billing Toggle ── */
+let isAnnual = false;
+function toggleBilling(){
+  isAnnual=!isAnnual;
+  document.getElementById('billingToggle').classList.toggle('annual',isAnnual);
+  document.getElementById('monthlyLabel').classList.toggle('active',!isAnnual);
+  document.getElementById('annualLabel').classList.toggle('active',isAnnual);
+  document.querySelectorAll('.price-num').forEach(el=>{
+    const v = isAnnual ? el.dataset.annual : el.dataset.monthly;
+    animateNum(el,parseInt(v));
+  });
+}
+function animateNum(el,target){
+  const start=parseInt(el.textContent)||0;
+  const dur=500; const s=performance.now();
+  function step(now){
+    const p=Math.min((now-s)/dur,1);
+    el.textContent=Math.round(start+(target-start)*p);
+    if(p<1) requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+
+/* ── Timeframe pills ── */
+function setTF(btn){
+  document.querySelectorAll('.tf').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+}
+
+/* ── Live Price Simulation ── */
+let basePrice=1.09234;
+setInterval(()=>{
+  basePrice+=(Math.random()-.5)*0.0002;
+  const chg=((basePrice-1.09234)/1.09234*100).toFixed(2);
+  const el=document.getElementById('livePrice');
+  if(el){
+    el.innerHTML=`${basePrice.toFixed(5)} &nbsp;${chg>=0?'▲':'▼'} ${chg>=0?'+':''}${chg}%`;
+    el.style.color=chg>=0?'var(--green)':'var(--red)';
+  }
+},1500);
+
+/* ── Market Widget ── */
+const pairs=[
+  {pair:'EUR/USD',price:1.09234,chg:+0.42},
+  {pair:'GBP/USD',price:1.27450,chg:+0.31},
+  {pair:'USD/JPY',price:149.82,chg:-0.18},
+  {pair:'USD/CHF',price:0.8923,chg:-0.09},
+  {pair:'AUD/USD',price:0.6512,chg:+0.22},
+  {pair:'XAU/USD',price:2341.50,chg:+0.55},
+  {pair:'US30',price:38420.0,chg:+0.78},
+];
+function renderMarket(){
+  const container=document.getElementById('marketRows');
+  if(!container) return;
+  container.innerHTML=pairs.map(p=>{
+    // Simulate tick
+    p.price+=(Math.random()-.5)*(p.price*0.0001);
+    const up=p.chg>=0;
+    return `<div class="mw-row">
+      <div class="mw-pair">${p.pair}</div>
+      <div class="mw-price">${p.price.toFixed(p.price>1000?2:p.price>100?3:4)}</div>
+      <div class="mw-chg ${up?'chg-up':'chg-dn'}">${up?'+':''}${p.chg.toFixed(2)}%</div>
+      <div><div class="mini-bar ${up?'bar-up':'bar-dn'}" style="width:${40+Math.random()*60}%"></div></div>
+    </div>`;
+  }).join('');
+}
+renderMarket();
+setInterval(renderMarket,2000);
+
+/* ── Scroll Reveal ── */
+const revealObs=new IntersectionObserver((entries)=>{
+  entries.forEach((e,i)=>{
+    if(e.isIntersecting){
+      setTimeout(()=>e.target.classList.add('visible'),i*60);
+      revealObs.unobserve(e.target);
+    }
+  });
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>revealObs.observe(el));
+
+/* ── Counter Animation ── */
+const counterObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      const el=e.target;
+      const target=parseInt(el.dataset.count)||0;
+      const suffix=el.dataset.suffix||'';
+      let current=0;
+      const step=target/80;
+      const t=setInterval(()=>{
+        current=Math.min(current+step,target);
+        el.textContent=(target>=1000?(current/1000).toFixed(0)+'K':Math.floor(current))+suffix;
+        if(current>=target) clearInterval(t);
+      },16);
+      counterObs.unobserve(el);
+    }
+  });
+},{threshold:.5});
+document.querySelectorAll('[data-count]').forEach(el=>counterObs.observe(el));
+
+/* ── Ticker ── */
+const tickerData=[
+  {pair:'EUR/USD',price:'1.09234',up:true,chg:'+0.42%'},
+  {pair:'GBP/USD',price:'1.27450',up:true,chg:'+0.31%'},
+  {pair:'USD/JPY',price:'149.820',up:false,chg:'-0.18%'},
+  {pair:'XAU/USD',price:'2341.50',up:true,chg:'+0.55%'},
+  {pair:'BTC/USD',price:'67,420',up:true,chg:'+1.24%'},
+  {pair:'US30',price:'38,420',up:true,chg:'+0.78%'},
+  {pair:'AUD/USD',price:'0.6512',up:true,chg:'+0.22%'},
+  {pair:'USD/CHF',price:'0.8923',up:false,chg:'-0.09%'},
+];
+function buildTicker(){
+  const inner=document.querySelector('.ticker-inner');
+  if(!inner) return;
+  const html=tickerData.map(t=>
+    `<span class="tick-item">
+      <strong>${t.pair}</strong> ${t.price}
+      <span class="${t.up?'tick-up':'tick-dn'}">${t.chg}</span>
+    </span>`
+  ).join('');
+  inner.innerHTML=html+html; // duplicate for seamless loop
+}
+buildTicker();
+</script>
+
+</body>
+</html>

@@ -6,7 +6,7 @@ export default function LoginPage() {
       {/* Nav */}
       <nav className="sticky top-0 z-50 bg-[#faf8f4] border-b border-[#e8e0d0] px-4 sm:px-6 md:px-10 py-3 sm:py-4 flex justify-between items-center">
         <a href="/" className="flex items-center gap-2.5 hover:opacity-80 transition-opacity">
-          <div className="w-8 h-8 bg-[#c07a1a] rounded-full flex items-center justify-center text-white font-bold text-sm">★</div>
+          <img src="/logo.svg" alt="Olympus" className="w-10 h-auto" />
           <span className="font-serif text-lg sm:text-xl font-semibold text-[#1a1a18]">Olympus</span>
         </a>
         <a 
@@ -30,7 +30,7 @@ export default function LoginPage() {
             <div className="hidden lg:flex flex-col items-center justify-center">
               <div className="w-full h-96 bg-gradient-to-br from-[#fdf0da] to-[#faf8f4] border border-[#e8e0d0] rounded-2xl flex items-center justify-center">
                 <div className="text-center">
-                  <div className="text-6xl mb-4">🎓</div>
+                  <img src="/logo.svg" alt="Olympus" className="w-20 h-auto mb-4" />
                   <h3 className="text-xl font-serif font-semibold text-[#1a1a18] mb-2">Learn & Grow</h3>
                   <p className="text-sm text-[#666]">Join thousands of students mastering in-demand skills</p>
                 </div>
@@ -42,7 +42,7 @@ export default function LoginPage() {
 
       {/* Footer */}
       <footer className="border-t border-[#e8e0d0] py-4 text-center text-xs text-[#aaa]">
-        © 2025 <span className="text-[#c07a1a]">Olympus Academy</span> · All rights reserved
+        © 2026 <span className="text-[#c07a1a]">Olympus Academy</span> · All rights reserved
       </footer>
     </div>
   )

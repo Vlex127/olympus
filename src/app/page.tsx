@@ -54,7 +54,7 @@ export default function Home() {
       {/* Nav */}
       <nav className="sticky top-0 z-50 bg-[#faf8f4] border-b border-[#e8e0d0] px-4 sm:px-6 md:px-10 py-3 sm:py-4 flex justify-between items-center">
         <div className="flex items-center gap-2.5">
-          <div className="w-8 h-8 bg-[#c07a1a] rounded-full flex items-center justify-center text-white font-bold text-sm">★</div>
+          <img src="/logo.svg" alt="Olympus" className="w-10 h-auto" /> 
           <span className="font-serif text-lg sm:text-xl font-semibold">Olympus</span>
         </div>
         <div className="hidden md:flex items-center gap-8">
@@ -154,7 +154,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="border-t border-[#e8e0d0] py-6 text-center text-xs text-[#aaa]">
-        © 2025 <span className="text-[#c07a1a]">Olympus Academy</span> · All rights reserved
+        © 2026 <span className="text-[#c07a1a]">Olympus Academy</span> · All rights reserved
       </footer>
     </div>
   );
