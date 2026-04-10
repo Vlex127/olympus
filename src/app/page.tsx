@@ -3,23 +3,27 @@
 import { useState } from "react";
 import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { WavyBackground } from "@/components/ui/wavy-background";
-import { EvervaultCard } from "@/components/ui/evervault-card";
 import { FeaturesSection } from "@/components/features-section";
 
 const CourseCard = ({ icon, title, description, price }: { icon: string; title: string; description: string; price: string }) => (
-  <div className="border border-[#e8e0d0] flex flex-col items-start p-3 sm:p-4 relative h-[22rem] sm:h-[24rem] md:h-[26rem] rounded-2xl bg-[#faf8f4]">
-    {/* Evervault card with icon + title */}
-    <EvervaultCard text={`${icon} ${title}`} className="flex-1 w-full" />
-
-    {/* Below the card */}
-    <div className="w-full flex flex-col gap-2 mt-3 sm:mt-4">
-      <h2 className="text-[#1a1a18] text-xs sm:text-sm font-medium leading-relaxed flex-1">
-        {description}
-      </h2>
-      <p className="text-xs border border-[#e8e0d0] font-medium rounded-full text-[#c07a1a] px-3 py-0.5 w-fit">
-        {price}
-      </p>
+  <div className="border border-[#e8e0d0] flex flex-col items-start p-4 sm:p-5 relative rounded-2xl bg-[#faf8f4] hover:border-[#c07a1a] transition-colors duration-300 group h-full">
+    {/* Icon and Title */}
+    <div className="flex items-center gap-2 mb-4">
+      <span className="text-2xl sm:text-3xl">{icon}</span>
+      <h3 className="text-[#1a1a18] text-base sm:text-lg font-semibold">
+        {title}
+      </h3>
     </div>
+
+    {/* Description */}
+    <p className="text-[#1a1a18] text-sm sm:text-base font-medium leading-relaxed flex-1 mb-4">
+      {description}
+    </p>
+
+    {/* Price Badge */}
+    <p className="text-xs sm:text-sm border border-[#e8e0d0] font-medium rounded-full text-[#c07a1a] px-3 py-1 w-fit">
+      {price}
+    </p>
   </div>
 );
 
