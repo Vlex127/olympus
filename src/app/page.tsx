@@ -5,6 +5,7 @@ import { TextGenerateEffect } from "@/components/ui/text-generate-effect";
 import { WavyBackground } from "@/components/ui/wavy-background";
 import { EvervaultCard } from "@/components/ui/evervault-card";
 import { FeaturesSection } from "@/components/features-section";
+import { url } from "inspector";
 
 const CourseCard = ({ icon, title, description, price }: { icon: string; title: string; description: string; price: string }) => (
   <div className="border border-[#e8e0d0] flex flex-col items-start p-4 sm:p-5 relative h-[24rem] sm:h-[26rem] md:h-[28rem] rounded-2xl bg-[#faf8f4]">
@@ -24,12 +25,12 @@ const CourseCard = ({ icon, title, description, price }: { icon: string; title: 
 );
 
 const courses = [
-  { icon: "💹", title: "Forex Trading", description: "Currency markets, risk management, and live strategy from active traders.", price: "Premium" },
-  { icon: "🎨", title: "Graphics Design", description: "Figma, Adobe suite, and modern design principles from concept to delivery.", price: "Premium" },
-  { icon: "💻", title: "Web Development", description: "Full-stack apps from React to databases — everything to ship real products.", price: "Premium" },
-  { icon: "🔐", title: "Cybersecurity", description: "Hands-on threat analysis, ethical hacking, and digital asset protection.", price: "Premium" },
-  { icon: "📊", title: "Data Analytics", description: "Python, SQL, and visualization tools that turn raw data into decisions.", price: "Premium" },
-  { icon: "🎬", title: "Video Production", description: "Cinematic storytelling from filming to post — professional techniques.", price: "Premium" },
+  { icon: "💹", title: "Forex Trading", description: "Currency markets, risk management, and live strategy from active traders.", price: "Premium", url: "/Rave/Olympus/index.html" },
+  { icon: "🎨", title: "Graphics Design", description: "Figma, Adobe suite, and modern design principles from concept to delivery.", price: "Premium", url: "/courses/graphics-design" },
+  { icon: "💻", title: "Web Development", description: "Full-stack apps from React to databases — everything to ship real products.", price: "Premium", url: "/courses/web-development" },
+  { icon: "🔐", title: "Cybersecurity", description: "Hands-on threat analysis, ethical hacking, and digital asset protection.", price: "Premium", url: "/courses/cybersecurity" },
+  { icon: "📊", title: "Data Analytics", description: "Python, SQL, and visualization tools that turn raw data into decisions.", price: "Premium", url: "/courses/data-analytics" },
+  { icon: "🎬", title: "Video Production", description: "Cinematic storytelling from filming to post — professional techniques.", price: "Premium", url: "/courses/video-production" },
 ];
 
 export default function Home() {
