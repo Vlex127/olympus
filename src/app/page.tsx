@@ -23,7 +23,7 @@ interface Course {
 
 const courses: Course[] = [
   {
-    icon: "💹",
+    icon: "/forex-icon.jpg",
     title: "Forex Trading",
     description: "Currency markets, risk management, and live strategy from active traders.",
     price: "Premium",
@@ -33,7 +33,7 @@ const courses: Course[] = [
     level: "Beginner → Advanced",
   },
   {
-    icon: "🎨",
+    icon: "/design-icon.jpg",
     title: "Graphics Design",
     description: "Figma, Adobe suite, and modern design principles from concept to delivery.",
     price: "Premium",
@@ -43,7 +43,7 @@ const courses: Course[] = [
     level: "Beginner → Intermediate",
   },
   {
-    icon: "💻",
+    icon: "/web-dev-icon.jpg",
     title: "Web Development",
     description: "Full-stack apps from React to databases — everything to ship real products.",
     price: "Premium",
@@ -53,7 +53,7 @@ const courses: Course[] = [
     level: "Beginner → Advanced",
   },
   {
-    icon: "🔐",
+    icon: "/security-icon.jpg",
     title: "Cybersecurity",
     description: "Hands-on threat analysis, ethical hacking, and digital asset protection.",
     price: "Premium",
@@ -63,7 +63,7 @@ const courses: Course[] = [
     level: "Intermediate → Advanced",
   },
   {
-    icon: "📊",
+    icon: "/data-icon.jpg",
     title: "Data Analytics",
     description: "Python, SQL, and visualization tools that turn raw data into decisions.",
     price: "Premium",
@@ -73,7 +73,7 @@ const courses: Course[] = [
     level: "Beginner → Intermediate",
   },
   {
-    icon: "🎬",
+    icon: "/video-icon.jpg",
     title: "Video Production",
     description: "Cinematic storytelling from filming to post — professional techniques.",
     price: "Premium",
@@ -150,7 +150,9 @@ const CourseCard = ({ course, onOpen }: { course: Course; onOpen: (c: Course) =>
     className="border border-[#e8e0d0] flex flex-col items-start p-4 sm:p-5 relative h-[24rem] sm:h-[26rem] md:h-[28rem] rounded-2xl bg-[#faf8f4] cursor-pointer group hover:border-[#c07a1a] transition-colors"
     onClick={() => onOpen(course)}
   >
-    <EvervaultCard text={`${course.icon} ${course.title}`} className="flex-1 w-full mb-3" />
+
+    <EvervaultCard text={`${course.title}`} src={`${course.icon}`} className="flex-1 w-full mb-3" />
+     
     <div className="w-full flex flex-col gap-2">
       <h2 className="text-[#1a1a18] text-sm sm:text-base font-medium leading-relaxed">
         {course.description}
