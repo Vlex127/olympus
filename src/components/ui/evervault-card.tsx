@@ -6,9 +6,11 @@ import { cn } from "@/lib/utils";
 
 export const EvervaultCard = ({
   text,
+  src,
   className,
 }: {
   text?: string;
+  src?: string;
   className?: string;
 }) => {
   let mouseX = useMotionValue(0);
@@ -47,7 +49,11 @@ export const EvervaultCard = ({
           randomString={randomString}
         />
         <div className="relative z-10 flex items-center justify-center">
-          <span className="text-center text-sm font-semibold text-[#1a1a18] px-4">{text}</span>
+          {src ? (
+            <img src={src} alt={text || "Course icon"} className="w-16 h-16 object-contain" />
+          ) : (
+            <span className="text-center text-sm font-semibold text-[#1a1a18] px-4">{text}</span>
+          )}
         </div>
       </div>
     </div>
