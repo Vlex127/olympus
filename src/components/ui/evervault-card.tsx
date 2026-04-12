@@ -27,15 +27,13 @@ export const EvervaultCard = ({
     let { left, top } = currentTarget.getBoundingClientRect();
     mouseX.set(clientX - left);
     mouseY.set(clientY - top);
-
-    const str = generateRandomString(1500);
-    setRandomString(str);
+    setRandomString(generateRandomString(1500));
   }
 
   return (
     <div
       className={cn(
-        "p-0.5  bg-transparent aspect-square  flex items-center justify-center w-full h-full relative",
+        "p-0.5 bg-transparent aspect-square flex items-center justify-center w-full h-full relative",
         className
       )}
     >
@@ -43,17 +41,27 @@ export const EvervaultCard = ({
         onMouseMove={onMouseMove}
         className="group/card rounded-3xl w-full relative overflow-hidden bg-transparent flex items-center justify-center h-full border border-[#e8e0d0] hover:border-[#c07a1a] transition-colors duration-300"
       >
+        {/* Full-bleed background image */}
+        {src && (
+          <img
+            src={src}
+            alt={text || "Course image"}
+            className="absolute inset-0 w-full h-full object-cover opacity-60"
+          />
+        )}
+
+        {/* Scramble + hover glow on top */}
         <CardPattern
           mouseX={mouseX}
           mouseY={mouseY}
           randomString={randomString}
         />
-        <div className="relative z-10 flex items-center justify-center">
-          {src ? (
-            <img src={src} alt={text || "Course icon"} className="w-16 h-16 object-contain" />
-          ) : (
-            <span className="text-center text-sm font-semibold text-[#1a1a18] px-4">{text}</span>
-          )}
+
+        {/* Course title centered on top of everything */}
+        <div className="relative z-10 flex items-center justify-center px-4">
+          <span className="text-center text-sm font-semibold text-[#1a1a18] bg-white/60 backdrop-blur-sm px-3 py-1.5 rounded-full">
+            {text}
+          </span>
         </div>
       </div>
     </div>
@@ -65,14 +73,14 @@ export function CardPattern({ mouseX, mouseY, randomString }: any) {
   let style = { maskImage, WebkitMaskImage: maskImage };
 
   return (
-    <div className="pointer-events-none">
-      <div className="absolute inset-0 rounded-2xl  [mask-image:linear-gradient(white,transparent)] group-hover/card:opacity-50"></div>
+    <div className="pointer-events-none absolute inset-0">
+      <div className="absolute inset-0 rounded-2xl [mask-image:linear-gradient(white,transparent)] group-hover/card:opacity-50" />
       <motion.div
-        className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#c07a1a] to-[#f0d4a8] opacity-0 group-hover/card:opacity-100 backdrop-blur-xl transition duration-500"
+        className="absolute inset-0 rounded-2xl bg-gradient-to-r from-[#c07a1a] to-[#f0d4a8] opacity-0 group-hover/card:opacity-80 backdrop-blur-xl transition duration-500"
         style={style}
       />
       <motion.div
-        className="absolute inset-0 rounded-2xl opacity-0 mix-blend-overlay  group-hover/card:opacity-100"
+        className="absolute inset-0 rounded-2xl opacity-0 mix-blend-overlay group-hover/card:opacity-100"
         style={style}
       >
         <p className="absolute inset-x-0 text-xs h-full break-words whitespace-pre-wrap text-white font-mono font-bold transition duration-500">
