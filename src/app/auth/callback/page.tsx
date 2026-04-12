@@ -4,18 +4,19 @@ import { redirect } from "next/navigation";
 export default async function AuthCallback({
   searchParams,
 }: {
-  searchParams: { code?: string; error?: string };
+  searchParams: Promise<{ code?: string; error?: string }>;
 }) {
+  const params = await searchParams;
   const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL || "";
   const supabaseKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY || "";
 
   const supabase = createClient(supabaseUrl, supabaseKey);
 
   // Handle OAuth callback
-  if (searchParams.code) {
+  if (params.code) {
     try {
       const { error: sessionError } = await supabase.auth.exchangeCodeForSession(
-        searchParams.code
+        params.code
       );
 
       if (sessionError) {
@@ -30,8 +31,8 @@ export default async function AuthCallback({
     }
   }
 
-  if (searchParams.error) {
-    return redirect(`/login?error=${searchParams.error}`);
+  if (params.error) {
+    return redirect(`/login?error=${params.error}`);
   }
 
   // If no code or error, redirect to login
