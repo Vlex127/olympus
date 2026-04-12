@@ -30,11 +30,11 @@ export default function SignupPage() {
             
             {/* Image Placeholder - Desktop Only */}
             <div className="hidden lg:flex flex-col items-center justify-center">
-              <div className="w-full h-96 bg-gradient-to-br from-[#fdf0da] to-[#faf8f4] border border-[#e8e0d0] rounded-2xl flex items-center justify-center">
+              <div className="w-full h-96 bg-gradient-to-br from-[#fdf0da] to-[#faf8f4] border border-[#e8e0d0] rounded-2xl flex flex-col items-center justify-center gap-4">
+                <img src="/logo.svg" alt="Olympus" className="w-24 h-24 object-contain" />
                 <div className="text-center">
-                  <img src="/logo.svg" alt="Olympus" className="w-20 h-auto mb-4" />
                   <h3 className="text-xl font-serif font-semibold text-[#1a1a18] mb-2">Start Your Journey</h3>
-                  <p className="text-sm text-[#666]">Join exclusive courses and unlock your potential</p>
+                  <p className="text-sm text-[#666] max-w-xs">Join exclusive courses and unlock your potential</p>
                 </div>
               </div>
             </div>
